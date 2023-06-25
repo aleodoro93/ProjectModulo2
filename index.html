@@ -11,32 +11,29 @@
 
 <body>
 
-
+<!-- inicio do form de conversao -->
     <form action="" class="container">
         <h1>Conversor de medidas</h1>
-        
-            
-
-                <label for="text"></label>
-                <input type="text" id="recebe" placeholder="Digite o valor" autocomplete="off">
-
-                
+        <!-- input que recebe o valor -->
+        <label for="text"></label>
+        <input type="text" id="recebe" placeholder="Digite o valor" autocomplete="off">
+                <!-- select que recebe a categoria de medida-->
                 <select class="medidas" id="medidas">
-            
-                    <option value=""" selected disabled>Selecione uma categoria</option>
-                    <option value="Comprimento">Comprimento</option>
+                 <option value=""" selected disabled>Selecione uma categoria</option>
+                <option value="Comprimento">Comprimento</option>
                     <option value="Peso">Peso</option>
                     <option value="Temperatura">Temperatura</option>
 
 
                 </select>
-
+<!-- select que recebe a origem de medida que sera convertida -->
                 <h1>Converter:</h1>
                 <div class="selecionar-SubMedida" id="Sub-Medida">
                     
                     <select class="subMedida" id="subMedida">
                         <option disabled selected>Selecione uma medida</option>
                     </select>
+                    <!-- select que recebe a unidade de destino qual sera convertida -->
                     <h1>Para:</h1>
                     <select class="outpSubMedida"  id="outpSubMedida">
                         <option disabled selected >Selecione outra medida</option>
@@ -45,8 +42,9 @@
 
 
                 </div>
+                <!-- botao de conversao -->
                 <button class="Converte" id="converte">Conveter</button>
-
+                <!-- div para exibição do resultado na tela -->
                 <div class="exibir" id="exibir">
 
                 

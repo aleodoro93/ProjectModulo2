@@ -1,17 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 body {
 
     background-image: url(./imagens/background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 h1 {
-    color: rgb(216, 214, 214);
+    color: rgb(206, 202, 202);
     align-items: center;
     text-align: center;
     font-size: 20px;
     letter-spacing: 3px;
     text-shadow: 2px 2px 3px black;
+    padding: 10px;
+
+    
     
     
     
@@ -25,6 +35,8 @@ h1 {
     border-radius: 10px;
     border: 10px solid rgba(0, 0, 255, 0.047);
     box-shadow: 0px 0px 20px  black;
+    min-height: 50vh;
+    
     
 
     
@@ -40,7 +52,7 @@ gap: 20px;
 form input {
 
     text-align: center;
-    width: 50%;
+    max-width: 50%;
     height: 20px;
     border-radius: 20px;
     
@@ -57,13 +69,15 @@ form input:focus {
 
 form select {
     text-align: center;
-    min-width: 100%;
     height: 30px;
     box-shadow: 1px 1px 5px;
     border-radius: 20px;
     text-shadow: 1px 1px 3px;
 }
 
+.outpSubMedida {
+    min-width: 100%;
+}
 
 form select:focus {
 

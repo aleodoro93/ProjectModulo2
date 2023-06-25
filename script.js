@@ -122,7 +122,7 @@ function updateSubmed() {
 }
 
 
-/* func de conversion  */
+/* func de conversao  */
 function converterUnidades() {
     const inputValue = document.getElementById("recebe").value;
     var selectedMedida = selectedSubMedidas.value;
@@ -131,7 +131,7 @@ function converterUnidades() {
 
     /* valida o campo de entrada */
     if (inputValue === "") {
-        /* estilização da exibição na tela */
+        /* estilização da exibição de erro na tela */
         mostrarNaTela.innerHTML = `Insira um valor valido`
         mostrarNaTela.style.color = "red"
         mostrarNaTela.style.textAlign = "center"
@@ -205,7 +205,7 @@ function converterUnidades() {
     }
 }
 /* exibir na tela o resultado da conversao */
-mostrarNaTela.innerHTML = `A conversãoo de ${selectedSubMedidas.value} para ${convertSelect.value} é de: ${resultado}`
+mostrarNaTela.innerHTML = `A conversão de ${selectedSubMedidas.value} para ${convertSelect.value} é de: ${resultado}`
 mostrarNaTela.style.fontWeight = "900"
 mostrarNaTela.style.color = "green"
 mostrarNaTela.style.textAlign = "center"
