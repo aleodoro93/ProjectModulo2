@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,10 @@
 
 <body>
 
-    <div class="container">
+
+    <form action="" class="container">
         <h1>Conversor de medidas</h1>
-        <div>
+        
             
 
                 <label for="text"></label>
@@ -22,7 +23,7 @@
                 
                 <select class="medidas" id="medidas">
             
-                    <option disabled selected>selecione uma categoria</option>
+                    <option value=""" selected disabled>Selecione uma categoria</option>
                     <option value="Comprimento">Comprimento</option>
                     <option value="Peso">Peso</option>
                     <option value="Temperatura">Temperatura</option>
@@ -30,29 +31,29 @@
 
                 </select>
 
-                <h1>converter:</h1>
+                <h1>Converter:</h1>
                 <div class="selecionar-SubMedida" id="Sub-Medida">
                     
                     <select class="subMedida" id="subMedida">
-                        <option disabled selected>selecione uma medida</option>
+                        <option disabled selected>Selecione uma medida</option>
                     </select>
-                    <h1>para:</h1>
+                    <h1>Para:</h1>
                     <select class="outpSubMedida"  id="outpSubMedida">
-                        <option disabled selected >selecione outra medida</option>
+                        <option disabled selected >Selecione outra medida</option>
                     </select>
 
 
 
                 </div>
-                <button class="Converte">Conveter</button>
+                <button class="Converte" id="converte">Conveter</button>
 
-                <div class="resultado" id="resultado">
+                <div class="exibir" id="exibir">
 
-                </div>
+                
 
             
         </div>
-    </div>
+    </form>
     
 </body>
 

@@ -5,9 +5,12 @@ body {
     background-size: cover;
 }
 
-h2 {
+h1 {
     align-items: center;
-    margin-left: 20%;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+    
 }
 .container {
     display: flex;
@@ -15,53 +18,71 @@ h2 {
     background: transparent;
     backdrop-filter: blur(5px);
     align-items: center;
-    padding-bottom: 10%;
     border-radius: 10px;
-    width: 20%;
-    margin-left: 40%;
-    margin-top: 10%;
     border: 10px solid rgba(0, 0, 255, 0.047);
     box-shadow: 0px 0px 20px  black;
-    min-height: 20%;
-    min-width: 20%;
+    
+
     
 
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    
+
+gap: 20px;
+
 }
 
+form input {
 
-form input{
-    border-radius: 20px;
     text-align: center;
-    
-    height: 40px;
+    width: 50%;
+    height: 20px;
+    border-radius: 20px;
     
 }
 
 form input:focus {
 
-    border-radius: 20px;
-    background-color: rgb(140, 217, 247);
+    background-color: bisque;
+    border: solid rgb(255, 238, 0);
+    border-radius: 50px;
+    height: 30px;
+    
+}
 
+form select {
+    text-align: center;
+    min-width: 100%;
+    height: 30px;
+    box-shadow: 1px 1px 5px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 3px;
+}
+
+
+form select:focus {
+
+    border-radius: 0px;
+    
 }
 
 .Converte {
 
     width: 100px;
-    height: 50px;
+    height: 40px;
     background-image: linear-gradient(to left, rgb(0, 132, 255), rgb(0, 255, 247), rgb(179, 0, 255));
     animation: button 5s infinite alternate;
     background-size: 300%, 100%;
     transition: all 0.7s;
     border-radius: 20px;
 
+}
+
+.Converte:hover {
+
+    background:green;
+    transition: 2s;
 }
 
 .hide-input {
