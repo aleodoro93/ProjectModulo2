@@ -205,15 +205,16 @@ function converterUnidades() {
     }
 }
 /* exibir na tela o resultado da conversao */
-mostrarNaTela.innerHTML = `a conversao de ${selectedSubMedidas.value} para ${convertSelect.value} é de: ${resultado}`
+mostrarNaTela.innerHTML = `A conversãoo de ${selectedSubMedidas.value} para ${convertSelect.value} é de: ${resultado}`
 mostrarNaTela.style.fontWeight = "900"
-mostrarNaTela.style.color = "blue"
+mostrarNaTela.style.color = "green"
 mostrarNaTela.style.textAlign = "center"
 mostrarNaTela.style.background = "white"
 mostrarNaTela.style.borderRadius = "50px"
 mostrarNaTela.style.boxShadow = "1px 1px 30px"
 mostrarNaTela.style.padding = "10px"
-mostrarNaTela.style.marginTop = "10%"
+mostrarNaTela.style.border = "solid green"
+
 
 }
 
