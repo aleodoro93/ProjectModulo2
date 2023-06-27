@@ -1,9 +1,10 @@
+/* reset do css */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
+/* estilização body */
 body {
 
     background-image: url(./imagens/background.png);
@@ -11,7 +12,7 @@ body {
     background-size: cover;
     min-height: 100vh;
 }
-
+/* titulos/textos do conversor */
 h1 {
     color: rgb(206, 202, 202);
     align-items: center;
@@ -26,14 +27,15 @@ h1 {
     
     
 }
+/* conteudo do conversor */
 .container {
     display: flex;
     flex-direction: column;
-    background: transparent;
+    background: rgba(27, 115, 192, 0.669);
     backdrop-filter: blur(15px);
     align-items: center;
     border-radius: 10px;
-    border: 10px solid rgba(0, 0, 255, 0.047);
+    border: 10px solid rgba(172, 172, 172, 0.959);
     box-shadow: 0px 0px 20px  black;
     min-height: 50vh;
     
@@ -42,13 +44,13 @@ h1 {
     
 
 }
-
+/* form */
 form {
 
 gap: 20px;
 
 }
-
+/* input recebe valor */
 form input {
 
     text-align: center;
@@ -57,7 +59,7 @@ form input {
     border-radius: 20px;
     
 }
-
+/* input quando clicado */
 form input:focus {
 
     background-color: bisque;
@@ -66,7 +68,7 @@ form input:focus {
     height: 30px;
     
 }
-
+/* select de medidas */
 form select {
     text-align: center;
     height: 30px;
@@ -74,8 +76,8 @@ form select {
     border-radius: 20px;
     text-shadow: 1px 1px 3px;
 }
-
-.outpSubMedida {
+/* estilização do output */
+.SaidaSubMedida {
     min-width: 100%;
 }
 
@@ -84,7 +86,7 @@ form select:focus {
     border-radius: 0px;
     
 }
-
+/* etilização botao de conversao */
 .Converte {
 
     width: 100px;
@@ -97,6 +99,7 @@ form select:focus {
 
 }
 
+/* estilização qnd mouse sobre botao */
 .Converte:hover {
 
     background:green;
@@ -106,7 +109,7 @@ form select:focus {
 .hide-input {
     display: none;
 }
-
+/* animacao do background do botao */
 @keyframes button {
     0% {
         background-position-x: 0%;

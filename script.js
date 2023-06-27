@@ -1,19 +1,25 @@
 /* variaveis */
-var mostrarNaTela = document.getElementById("exibir");
-var selectedMedidas = document.getElementById("medidas");
-var selectedSubMedidas = document.getElementById("subMedida");
-var convertSelect = document.getElementById("outpSubMedida");
+
+var mostrarNaTela = document.getElementById("exibir")
+var SelecionarMedidas = document.getElementById("medidas")
+var SelecionarSubMedidas = document.getElementById("subMedida")
+var converterSelecao = document.getElementById("SaidaSubMedida")
 var resultado = ""
-var button = document.getElementById("converte");
-var empty = document.getElementById("empty")
-selectedSubMedidas.addEventListener("change", updateSubmed);
-selectedMedidas.addEventListener("change", updateValues);
+var Botao = document.getElementById("converte");
+SelecionarMedidas.addEventListener("change", AtualizarCategoria);
+SelecionarSubMedidas.addEventListener("change", AtualizarSubMedida);
 
-button.addEventListener("click", function(event){
-    event.preventDefault();
-    converterUnidades();
 
-} )
+Botao.addEventListener("click", function (event) {
+    event.preventDefault()
+    converterUnidades()
+    verificarSelecao()
+    
+
+})
+
+
+
 
 
 
@@ -21,31 +27,30 @@ button.addEventListener("click", function(event){
 
 /* funcao para primeiro select */
 
-function updateValues() {
+function AtualizarCategoria() {
 
     /*  limpa o campo de saida   */
-    convertSelect.innerHTML = `<option value = "vazio" disabled selected >selecione outra medida</option>`
 
-    if (selectedMedidas.value === "Comprimento") {
 
-        selectedSubMedidas.innerHTML = `
+    if (SelecionarMedidas.value === "Comprimento") {
 
-        <option disabled selected >selecione uma medida</option>
+        SelecionarSubMedidas.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Metros">Metros</option>
         <option value="Polegadas">Polegadas</option> 
         <option value="Centimetros">Centimetros</option>`
 
-    } else if (selectedMedidas.value === "Peso") {
-        selectedSubMedidas.innerHTML = `
+    } else if (SelecionarMedidas.value === "Peso") {
+        SelecionarSubMedidas.innerHTML = `
 
-        <option disabled selected >selecione uma medida</option>
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Quilogramas">Quilogramas</option>
         <option value="Gramas">Gramas</option>
         <option value="Libras">Libras</option>`
 
-    } else if (selectedMedidas.value === "Temperatura") {
-        selectedSubMedidas.innerHTML = `
-        <option disabled selected >selecione uma medida</option>
+    } else if (SelecionarMedidas.value === "Temperatura") {
+        SelecionarSubMedidas.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Celsius">Celsius</option>
         <option value="Fahrenheit">Fahrenheit</option>
         <option value="Kelvin">Kelvin</option>`
@@ -53,69 +58,72 @@ function updateValues() {
 }
 
 /* função para atualizar a submedida */
-function updateSubmed() {
+function AtualizarSubMedida() {
 
-    if (selectedSubMedidas.value === "Metros") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
+    if (SelecionarSubMedidas.value === "Metros") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
     <option value="Polegadas">Polegadas</option> 
     <option value="Centimetros">Centimetros</option>`
 
-    } else if (selectedSubMedidas.value === "Polegadas") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
+    } else if (SelecionarSubMedidas.value === "Polegadas") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
          <option value="Metros">Metros</option> 
          <option value="Centimetros">Centimetros</option>`
-    } else if (selectedSubMedidas.value === "Centimetros") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
-        
+    } else if (SelecionarSubMedidas.value === "Centimetros") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Metros">Metros</option> 
         <option value="Polegadas">Polegadas</option>`
     }
 
     /* update da opção peso  */
 
-    else if (selectedSubMedidas.value === "Quilogramas") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
-        
+    else if (SelecionarSubMedidas.value === "Quilogramas") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Gramas">Gramas</option> 
         <option value="Libras">Libras</option>`
-    } else if (selectedSubMedidas.value === "Gramas") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
-        
+    } else if (SelecionarSubMedidas.value === "Gramas") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Quilogramas">Quilogramas</option> 
         <option value="Libras">Libras</option>`
 
-    } else if (selectedSubMedidas.value === "Libras") {
+    } else if (SelecionarSubMedidas.value === "Libras") {
 
-        convertSelect.innerHTML = `
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Gramas">Gramas</option> 
         <option value="Quilogramas">Quilogramas</option>`
 
     }
     /*  bloco para temperatura  */
 
-    else if (selectedSubMedidas.value === "Celsius") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
-        
+    else if (SelecionarSubMedidas.value === "Celsius") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Fahrenheit">Fahrenheit</option> 
         <option value="Kelvin">Kelvin</option>`
 
-    } else if (selectedSubMedidas.value === "Fahrenheit") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
-        
+    } else if (SelecionarSubMedidas.value === "Fahrenheit") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Celsius">Celsius</option> 
         <option value="Kelvin">Kelvin</option>`
 
-    } else if (selectedSubMedidas.value === "Kelvin") {
-        convertSelect.innerHTML = ""
-        convertSelect.innerHTML = `
-        
+    } else if (SelecionarSubMedidas.value === "Kelvin") {
+        converterSelecao.innerHTML = ""
+        converterSelecao.innerHTML = `
+        <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Fahrenheit">Fahrenheit</option> 
         <option value="Celsius">Celsius</option>`
     }
@@ -124,98 +132,96 @@ function updateSubmed() {
 
 /* func de conversao  */
 function converterUnidades() {
-    const inputValue = document.getElementById("recebe").value;
-    var selectedMedida = selectedSubMedidas.value;
-    var selectedOutpMedida = convertSelect.value;
+    var valorEntrada = document.getElementById("recebe").value;
+
+
 
 
     /* valida o campo de entrada */
-    if (inputValue === "") {
-        /* estilização da exibição de erro na tela */
-        mostrarNaTela.innerHTML = `Insira um valor valido`
-        mostrarNaTela.style.color = "red"
-        mostrarNaTela.style.textAlign = "center"
-        mostrarNaTela.style.background = "white"
-        mostrarNaTela.style.borderRadius = "50px"
-        mostrarNaTela.style.boxShadow = "1px 1px 30px"
-        mostrarNaTela.style.padding = "10px"
-        mostrarNaTela.style.marginTop = "10%"
-        return;
+    if (SelecionarMedidas.value === "vazio" || SelecionarSubMedidas.value ===  "vazio" || converterSelecao.value === "vazio"){
+        alert("Selecione todas opções")
+        return
+    } else if (valorEntrada === ""){
+        alert("Insira um valor valido")
+        return
     }
 
     /* calculo de conversao metros polegadas e cm */
-    else if (selectedMedida === "Metros") {
-        if (selectedOutpMedida === "Polegadas") {
-            resultado = (inputValue * 39.37).toFixed(2);
-        } else if (selectedOutpMedida === "Centimetros") {
-            resultado = (inputValue * 100).toFixed(2);
+     else if (SelecionarSubMedidas.value === "Metros") {
+        if (converterSelecao.value === "Polegadas") {
+            resultado = (valorEntrada * 39.37).toFixed(2);
+        } else if (converterSelecao.value === "Centimetros") {
+            resultado = (valorEntrada * 100).toFixed(2);
         }
-    } else if (selectedMedida === "Polegadas") {
-        if (selectedOutpMedida === "Metros") {
-            resultado = (inputValue / 39.37).toFixed(2)
-        } else if (selectedOutpMedida === "Centimetros") {
-            resultado = (inputValue * 2.54).toFixed(2)
+    } else if (SelecionarSubMedidas.value === "Polegadas") {
+        if (converterSelecao.value === "Metros") {
+            resultado = (valorEntrada / 39.37).toFixed(2)
+        } else if (converterSelecao.value === "Centimetros") {
+            resultado = (valorEntrada * 2.54).toFixed(2)
         }
-    } else if (selectedMedida === "Centimetros") {
-        if (selectedOutpMedida === "Metros") {
-            resultado = (inputValue / 100).toFixed(2)
-        } else if (selectedOutpMedida === "Polegadas") {
-            resultado = (inputValue / 2.54).toFixed(2)
+    } else if (SelecionarSubMedidas.value === "Centimetros") {
+        if (converterSelecao.value === "Metros") {
+            resultado = (valorEntrada / 100).toFixed(2)
+        } else if (converterSelecao.value === "Polegadas") {
+            resultado = (valorEntrada / 2.54).toFixed(2)
         }
 
         /* bloco de conversao para KG gramas e libras */
-    } else if (selectedMedida === "Quilogramas") {
-        if (selectedOutpMedida === "Gramas") {
-            resultado = (inputValue * 1000).toFixed(2)
-        } else if (selectedOutpMedida === "Libras") {
-            resultado = (inputValue * 2.20462).toFixed(4)
+    } else if (SelecionarSubMedidas.value === "Quilogramas") {
+        if (converterSelecao.value === "Gramas") {
+            resultado = (valorEntrada * 1000).toFixed(2)
+        } else if (converterSelecao.value === "Libras") {
+            resultado = (valorEntrada * 2.20462).toFixed(4)
         }
-    } else if (selectedMedida === "Gramas") {
-        if (selectedOutpMedida === "Quilogramas") {
-            resultado = (inputValue / 1000).toFixed(4)
-        } else if (selectedOutpMedida === "Libras") {
-            resultado = (inputValue / 453.592).toFixed(4)
+    } else if (SelecionarSubMedidas.value === "Gramas") {
+        if (converterSelecao.value === "Quilogramas") {
+            resultado = (valorEntrada / 1000).toFixed(4)
+        } else if (converterSelecao.value === "Libras") {
+            resultado = (valorEntrada / 453.592).toFixed(4)
         }
-    } else if (selectedMedida === "Libras") {
-        if (selectedOutpMedida === "Quilogramas") {
-            resultado = (inputValue / 2.20462).toFixed(2);
-        } else if (selectedOutpMedida === "Gramas") {
-            resultado = (inputValue * 453.592).toFixed(2)
+    } else if (SelecionarSubMedidas.value === "Libras") {
+        if (converterSelecao.value === "Quilogramas") {
+            resultado = (valorEntrada / 2.20462).toFixed(2);
+        } else if (converterSelecao.value === "Gramas") {
+            resultado = (valorEntrada * 453.592).toFixed(2)
         }
-        
+
         /* bloco de conversao para celsius fr e kelvin */
 
-    } else if (selectedMedida === "Celsius") {
-        if (selectedOutpMedida === "Fahrenheit") {
-            resultado = ((inputValue * 9) / 5 + 32).toFixed(2)
-        } else if (selectedOutpMedida === "Kelvin") {
-            resultado = (parseFloat(inputValue) + 273.15).toFixed(2)
+    } else if (SelecionarSubMedidas.value === "Celsius") {
+        if (converterSelecao.value === "Fahrenheit") {
+            resultado = ((valorEntrada * 9) / 5 + 32).toFixed(2)
+        } else if (converterSelecao.value === "Kelvin") {
+            resultado = (parseFloat(valorEntrada) + 273.15).toFixed(2)
         }
-    } else if (selectedMedida === "Fahrenheit") {
-    if (selectedOutpMedida === "Celsius") {
-        resultado = ((inputValue - 32) * 5 / 9).toFixed(2)
-    } else if (selectedOutpMedida === "Kelvin") {
-        resultado = ((inputValue - 32) * 5 / 9 + 273.15).toFixed(2);
+    } else if (SelecionarSubMedidas.value === "Fahrenheit") {
+        if (converterSelecao.value === "Celsius") {
+            resultado = ((valorEntrada - 32) * 5 / 9).toFixed(2)
+        } else if (converterSelecao.value === "Kelvin") {
+            resultado = ((valorEntrada - 32) * 5 / 9 + 273.15).toFixed(2);
+        }
+    } else if (SelecionarSubMedidas.value === "Kelvin") {
+        if (converterSelecao.value === "Celsius") {
+            resultado = (valorEntrada - 273.15).toFixed(2);
+        } else if (converterSelecao.value === "Fahrenheit") {
+            resultado = ((valorEntrada - 273.15) * 9 / 5 + 32).toFixed(2);
+        }
     }
-} else if (selectedMedida === "Kelvin") {
-    if (selectedOutpMedida === "Celsius") {
-        resultado = (inputValue - 273.15).toFixed(2);
-    } else if (selectedOutpMedida === "Fahrenheit") {
-        resultado = ((inputValue - 273.15) * 9 / 5 + 32).toFixed(2);
-    }
-}
-/* exibir na tela o resultado da conversao */
-mostrarNaTela.innerHTML = `A conversão de ${selectedSubMedidas.value} para ${convertSelect.value} é de: ${resultado}`
-mostrarNaTela.style.fontWeight = "900"
-mostrarNaTela.style.color = "green"
-mostrarNaTela.style.textAlign = "center"
-mostrarNaTela.style.background = "white"
-mostrarNaTela.style.borderRadius = "50px"
-mostrarNaTela.style.boxShadow = "1px 1px 30px"
-mostrarNaTela.style.padding = "10px"
-mostrarNaTela.style.border = "solid green"
+    /* exibir na tela o resultado da conversao */
+    mostrarNaTela.innerHTML = `A conversão de ${SelecionarSubMedidas.value} para ${converterSelecao.value} é de: ${resultado}`
+    mostrarNaTela.style.fontWeight = "900"
+    mostrarNaTela.style.color = "green"
+    mostrarNaTela.style.textAlign = "center"
+    mostrarNaTela.style.background = "white"
+    mostrarNaTela.style.borderRadius = "50px"
+    mostrarNaTela.style.boxShadow = "1px 1px 30px"
+    mostrarNaTela.style.padding = "10px"
+    mostrarNaTela.style.border = "solid green"
 
 
 }
+
+
+
 
 

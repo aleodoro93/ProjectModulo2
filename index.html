@@ -15,11 +15,11 @@
     <form action="" class="container">
         <h1>Conversor de medidas</h1>
         <!-- input que recebe o valor -->
-        <label for="text"></label>
-        <input type="text" id="recebe" placeholder="Digite o valor" autocomplete="off">
+        <label for="recebe"></label>
+        <input type="number" id="recebe" placeholder="Digite o valor" autocomplete="off">
                 <!-- select que recebe a categoria de medida-->
                 <select class="medidas" id="medidas">
-                 <option value=""" selected disabled>Selecione uma categoria</option>
+                 <option value="vazio" selected disabled>Selecione uma categoria</option>
                 <option value="Comprimento">Comprimento</option>
                     <option value="Peso">Peso</option>
                     <option value="Temperatura">Temperatura</option>
@@ -31,12 +31,12 @@
                 <div class="selecionar-SubMedida" id="Sub-Medida">
                     
                     <select class="subMedida" id="subMedida">
-                        <option disabled selected>Selecione uma medida</option>
+                        <option  value="vazio" disabled selected>Selecione uma medida</option>
                     </select>
                     <!-- select que recebe a unidade de destino qual sera convertida -->
                     <h1>Para:</h1>
-                    <select class="outpSubMedida"  id="outpSubMedida">
-                        <option disabled selected >Selecione outra medida</option>
+                    <select class="SaidaSubMedida"  id="SaidaSubMedida">
+                        <option  value="vazio" selected >Selecione outra medida</option>
                     </select>
 
 
