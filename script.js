@@ -97,7 +97,7 @@ function AtualizarSubMedida() {
         <option value="Libras">Libras</option>`
 
     } else if (SelecionarSubMedidas.value === "Libras") {
-
+        converterSelecao.innerHTML = ""
         converterSelecao.innerHTML = `
         <option value = "vazio" disabled selected >selecione outra medida</option>
         <option value="Gramas">Gramas</option> 
