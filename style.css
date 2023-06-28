@@ -3,10 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 /* estilização body */
 body {
-
     background-image: url(./imagens/formulas-cientificas-na-lousa_23-2148494010.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,8 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10%;
-}
+    margin-top: 10%;}
 /* titulos/textos do conversor */
 h1 {
     color: rgb(206, 202, 202);
