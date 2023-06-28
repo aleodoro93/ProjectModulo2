@@ -7,10 +7,14 @@
 /* estilização body */
 body {
 
-    background-image: url(./imagens/background.png);
+    background-image: url(./imagens/formulas-cientificas-na-lousa_23-2148494010.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
 }
 /* titulos/textos do conversor */
 h1 {
@@ -31,8 +35,8 @@ h1 {
 .container {
     display: flex;
     flex-direction: column;
-    background: rgba(27, 115, 192, 0.669);
-    backdrop-filter: blur(15px);
+    background:transparent;
+    backdrop-filter: blur(10px);
     align-items: center;
     border-radius: 10px;
     border: 10px solid rgba(172, 172, 172, 0.959);
@@ -46,7 +50,7 @@ h1 {
 }
 /* form */
 form {
-
+min-width: 60%;
 gap: 20px;
 
 }
